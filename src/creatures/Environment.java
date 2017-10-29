@@ -36,7 +36,7 @@ public class Environment extends JPanel implements Runnable {
     private List<AbstractCreature> creatures;
 
     /** Number of creates in the simulator. */
-    private int creaturesCount = 50;
+    private int creaturesCount = 5;
 
     /** The thread in which the simulation runs. */
     private Thread simulation;
