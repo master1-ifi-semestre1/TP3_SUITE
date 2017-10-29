@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="99e7873e-e099-4a8c-b70d-a0614596f4c4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/creatures/ICreature.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/creatures/IActionable.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/creatures/IDrawable.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/creatures/IEnvironment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/creatures/Environment.java" afterPath="$PROJECT_DIR$/src/creatures/Environment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/creatures/ICreature.java" afterPath="$PROJECT_DIR$/src/creatures/ICreature.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -64,11 +66,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ICreature.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ICreature.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/creatures/ICreature.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="40" lean-forward="true" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
+            <state relative-caret-position="255">
+              <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IEnvironment.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/creatures/IEnvironment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IActionable.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/creatures/IActionable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="30" lean-forward="false" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IDrawable.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/creatures/IDrawable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="24" lean-forward="true" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -125,7 +157,10 @@
         <option value="$PROJECT_DIR$/src/creatures/AbstractCreature.java" />
         <option value="$PROJECT_DIR$/src/creatures/SmartCreature.java" />
         <option value="$PROJECT_DIR$/src/creatures/Environment.java" />
+        <option value="$PROJECT_DIR$/src/creatures/IDrawable.java" />
+        <option value="$PROJECT_DIR$/src/creatures/IActionable.java" />
         <option value="$PROJECT_DIR$/src/creatures/ICreature.java" />
+        <option value="$PROJECT_DIR$/src/creatures/IEnvironment.java" />
       </list>
     </option>
   </component>
@@ -505,10 +540,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/creatures/IDrawable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="24" lean-forward="true" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/creatures/IActionable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="30" lean-forward="false" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/creatures/ICreature.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="40" lean-forward="true" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
+        <state relative-caret-position="255">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/creatures/IEnvironment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
