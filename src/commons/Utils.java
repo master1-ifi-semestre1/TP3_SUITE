@@ -14,10 +14,23 @@ public class Utils {
         public R apply(R a, T b);
     }
 
+    /**
+     * filter : filtre les éléments d'une structure "itérable" par un prédicat
+     * @param c : structure iterable
+     * @param p : le prédicat
+     * @param <T>
+     * @return
+     */
     public static <T> Iterable<T> filter(Iterable<? extends T> c, Predicate<? super T> p) {
         List<T> result = new ArrayList<T>();
 
         // TODO: write the code of filter (filtering elements of c with predicate p)
+        // DONE
+        for (T e : c) {
+            if (p.apply(e)) {   // p(e) est vrai?
+                result.add(e);
+            }
+        }
 
         return result;
     }
@@ -26,7 +39,7 @@ public class Utils {
      *
      *
      *
-     * @param i
+     * @param c
      * @param f
      * @param z
      *            start value

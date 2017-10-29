@@ -1,5 +1,7 @@
 package creatures;
 
+import commons.Utils;
+
 import static java.lang.Math.PI;
 import static java.lang.Math.atan;
 import static java.lang.Math.toDegrees;
@@ -216,7 +218,7 @@ public abstract class AbstractCreature {
     /**
      * Draws creature to a given canvas.
      *
-     * @param g
+     * @param g2
      *            canvas where to draw the creature.
      */
     public void paint(Graphics2D g2) {
@@ -242,7 +244,7 @@ public abstract class AbstractCreature {
         StringBuilder sb = new StringBuilder();
         sb.append(getFullName(cl));
         sb.append("\n---\n");
-        sb.append(mkString(getProperties(cl), "\n"));
+        sb.append(Utils.mkString(getProperties(cl), "\n"));
 
         return sb.toString();
     }
