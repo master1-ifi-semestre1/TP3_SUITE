@@ -6,6 +6,7 @@ import static java.lang.Math.random;
 import static java.lang.Math.sin;
 
 import java.awt.Color;
+import java.awt.geom.Point2D;
 
 public class BouncingCreature extends AbstractCreature {
 
@@ -22,9 +23,9 @@ public class BouncingCreature extends AbstractCreature {
      */
     protected int currCycle;
 
-    public BouncingCreature(Environment environment, double x, double y,
+    public BouncingCreature(IEnvironment environment, Point2D position,
                             double direction,  double speed, Color color) {
-        super(environment, x, y);
+        super(environment, position);
 
         this.speed = speed;
         this.direction = direction;

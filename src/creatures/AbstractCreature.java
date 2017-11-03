@@ -6,9 +6,7 @@ import static java.lang.Math.PI;
 import static java.lang.Math.atan;
 import static java.lang.Math.toDegrees;
 
-import java.awt.Color;
-import java.awt.Graphics2D;
-import java.awt.Point;
+import java.awt.*;
 import java.awt.geom.Point2D;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -35,7 +33,8 @@ public abstract class AbstractCreature {
     protected double visionDistance = DEFAULT_VISION_DISTANCE;
 
     /** Position */
-    protected double x, y;
+    //protected double x, y;
+    protected Point2D position;
 
     /** Speed in pixels */
     protected double speed;
@@ -52,17 +51,10 @@ public abstract class AbstractCreature {
     /** Size of the creature in pixels */
     protected final int size = DEFAULT_SIZE;
 
-    public AbstractCreature(Environment environment, double newX, double newY) {
+    public AbstractCreature(Environment environment, Point2D position) {
         this.environment = environment;
 
-        if (newX > environment.getWidth() / 2)
-            newX -= size;
-
-        if (newY > environment.getHeight() / 2)
-            newY -= size;
-
-        setX(newX);
-        setY(newY);
+        setPosition(position);
     }
 
     /**
@@ -84,11 +76,11 @@ public abstract class AbstractCreature {
         return visionDistance;
     }
 
-    public double getX() {
+    /*public double getX() {
         return x;
-    }
+    }*/
 
-    public void setX(double newX) {
+    /*public void setX(double newX) {
         if (newX > environment.getWidth() / 2) {
             newX = -environment.getWidth() / 2;
         } else if (newX < -environment.getWidth() / 2) {
@@ -96,13 +88,13 @@ public abstract class AbstractCreature {
         }
 
         this.x = newX;
-    }
+    }*/
 
-    public double getY() {
+    /*public double getY() {
         return y;
-    }
+    }*/
 
-    public void setY(double newY) {
+    /*public void setY(double newY) {
         if (newY > environment.getHeight() / 2) {
             newY = -environment.getHeight() / 2;
         } else if (newY < -environment.getHeight() / 2) {
@@ -110,7 +102,7 @@ public abstract class AbstractCreature {
         }
 
         this.y = newY;
-    }
+    }*/
 
     public double getSpeed() {
         return speed;
@@ -140,7 +132,29 @@ public abstract class AbstractCreature {
      * @return position of the creature as a {@link Point}
      */
     public Point2D getPosition() {
-        return new Point2D.Double(x, y);
+        return new Point2D.Double(position.getX(), position.getY());
+    }
+
+    public void setPosition(Point2D newPosition) {
+        setPosition(position.getX(), position.getY());
+    }
+
+    public void setPosition(double x, double y) {
+        Dimension dim = environment.getSize();
+
+        if (x > dim.getWidth() / 2) {
+            x = -dim.getWidth() / 2;
+        } else if (x < -dim.getWidth() / 2) {
+            x = dim.getWidth() / 2;
+        }
+
+        if (y > dim.getHeight() / 2) {
+            y = -dim.getHeight() / 2;
+        } else if (y < -dim.getHeight() / 2) {
+            y = dim.getHeight() / 2;
+        }
+
+        this.position = new Point2D.Double(x, y);
     }
 
     // ----------------------------------------------------------------------------
@@ -148,8 +162,9 @@ public abstract class AbstractCreature {
     // ----------------------------------------------------------------------------
 
     protected void move(double incX, double incY) {
-        setX(x + incX);
-        setY(y + incY);
+        //setX(x + incX);
+        //setY(y + incY);
+        setPosition(position.getX() + incX, position.getY() + incY);
     }
 
     protected void rotate(double angle) {
@@ -172,10 +187,10 @@ public abstract class AbstractCreature {
 
         // use a inverse trigonometry to get the angle in an orthogonal triangle
         // formed by the points (x,y) and (x1,y1)
-        if (x != p.getX()) {
+        if (position.getX() != p.getX()) {
             // if we are not in the same horizontal axis
-            b = atan((y - p.getY()) / (x - p.getX()));
-        } else if (y < p.getY()) {
+            b = atan((position.getY() - p.getY()) / (position.getX() - p.getX()));
+        } else if (position.getY() < p.getY()) {
             // below -pi/2
             b = -PI / 2;
         } else {
@@ -185,7 +200,7 @@ public abstract class AbstractCreature {
 
         // make a distinction between the case when the (x1, y1)
         // is right from the (x,y) or left
-        if (x < p.getX()) {
+        if (position.getX() < p.getX()) {
             b += PI;
         }
 
@@ -223,7 +238,7 @@ public abstract class AbstractCreature {
      */
     public void paint(Graphics2D g2) {
         // center the point
-        g2.translate(x, y);
+        g2.translate(position.getX(), position.getY());
         // center the surrounding rectangle
         g2.translate(-size / 2, -size / 2);
         // center the arc
