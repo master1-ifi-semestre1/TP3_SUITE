@@ -26,7 +26,7 @@ public class SmartCreature extends AbstractCreature {
     /** Minimal speed in pixels per loop. */
     private final static double MIN_SPEED = 3d;
 
-    public SmartCreature(Environment environment, double x, double y, double direction, double speed,
+    public SmartCreature(IEnvironment environment, double x, double y, double direction, double speed,
                          Color color) {
         super(environment, x, y);
         this.direction = direction;

@@ -10,7 +10,7 @@ import java.awt.Color;
  */
 public class StupidCreature extends AbstractCreature {
 
-    public StupidCreature(Environment environment, double x, double y,
+    public StupidCreature(IEnvironment environment, double x, double y,
                           double direction, double speed, Color color) {
         super(environment, x, y);
 

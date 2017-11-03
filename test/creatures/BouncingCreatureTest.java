@@ -11,8 +11,6 @@ import java.awt.Dimension;
 import org.junit.Before;
 import org.junit.Test;
 
-import creatures.Environment;
-
 public class BouncingCreatureTest {
     Environment environment = mock(Environment.class);
     final double w = 200;
