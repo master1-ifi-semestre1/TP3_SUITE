@@ -14,7 +14,7 @@ import javax.swing.JFrame;
 public class Launcher extends JFrame {
 
     public Launcher() {
-        Environment environment = new Environment(640, 480);
+        IEnvironment environment = new IEnvironment(640, 480);
         setName("Creature Simulator");
         setSize(640, 480);
         setLayout(new BorderLayout());

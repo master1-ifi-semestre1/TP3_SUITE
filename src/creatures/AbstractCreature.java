@@ -46,12 +46,12 @@ public abstract class AbstractCreature {
     protected Color color;
 
     /** Reference to the environment */
-    protected final Environment environment;
+    protected final IEnvironment environment;
 
     /** Size of the creature in pixels */
     protected final int size = DEFAULT_SIZE;
 
-    public AbstractCreature(Environment environment, Point2D position) {
+    public AbstractCreature(IEnvironment environment, Point2D position) {
         this.environment = environment;
 
         setPosition(position);

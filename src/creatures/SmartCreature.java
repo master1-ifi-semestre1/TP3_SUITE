@@ -1,6 +1,7 @@
 package creatures;
 
 import java.awt.Color;
+import java.awt.geom.Point2D;
 import java.util.Collection;
 
 /**
@@ -26,9 +27,9 @@ public class SmartCreature extends AbstractCreature {
     /** Minimal speed in pixels per loop. */
     private final static double MIN_SPEED = 3d;
 
-    public SmartCreature(IEnvironment environment, double x, double y, double direction, double speed,
+    public SmartCreature(IEnvironment environment, Point2D position, double direction, double speed,
                          Color color) {
-        super(environment, x, y);
+        super(environment, position);
         this.direction = direction;
         this.speed = speed;
         this.color = color;

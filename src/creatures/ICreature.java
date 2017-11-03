@@ -3,7 +3,7 @@ package creatures;
 import java.awt.geom.Point2D;
 
 public interface ICreature extends IActionable, IDrawable {
-    public Environment getEnvironment();
+    public IEnvironment getEnvironment();
 
     public double getSpeed();
 

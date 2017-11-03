@@ -48,7 +48,7 @@ public class CreatureBuilder {
                         b -= 1.0f;
                 }
             }
-            list.add(new BouncingCreature(environment, x, y, direction, speed, new Color(
+            list.add(new BouncingCreature(environment, po, direction, speed, new Color(
                     r, g, b)));
         }
         creaturesCount = number;
